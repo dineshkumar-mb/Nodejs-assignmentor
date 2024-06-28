@@ -3,14 +3,14 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-const mongodb_url = process.env.MONGODB_URL;
+const MONGODB_URL= process.env.MONGODB_URL;
 
 const connectDB = async () => {
     try {
-        if (!mongodb_url) {
+        if (!MONGODB_URL) {
             throw new Error("MongoDB URL not set in environment variables");
         }
-        await mongoose.connect(mongodb_url, {
+        await mongoose.connect(MONGODB_URL, {
             
         });
         console.log("MongoDB Connected...");
